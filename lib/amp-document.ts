@@ -183,7 +183,8 @@ export function renderAmpDocument(pathname: string) {
     .field{width:100%;box-sizing:border-box;min-height:48px;margin-top:4px;padding:10px 12px;font-size:16px;border:1px solid #e1d9c8}
     .choices{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .choice{display:flex;align-items:center;gap:8px;min-height:48px;border:1px solid #e1d9c8;padding:10px 12px;background:#fff}
-    .consent{display:flex;gap:10px;align-items:flex-start;font-weight:400;margin:12px 0}
+    .consent{display:flex;gap:10px;align-items:flex-start;margin:12px 0;font-size:12px;line-height:1.45;font-weight:400;color:#5b6358}
+    .consent input{width:18px;height:18px;margin-top:2px;flex:none}
     .btn{display:block;width:100%;min-height:48px;border:0;background:#7e4326;color:#fff;font-size:16px;font-weight:700}
     .facts{display:grid;grid-template-columns:8.5rem 1fr;gap:8px 12px;font-family:Arial,sans-serif;font-size:15px}
     .facts dt{font-weight:700;color:#3f5744}

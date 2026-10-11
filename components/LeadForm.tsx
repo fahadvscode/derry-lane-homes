@@ -248,10 +248,9 @@ export function LeadForm({
         </div>
         {errors.is_broker && <p className="mt-1 text-sm font-semibold text-brand-accent-ink">{errors.is_broker}</p>}
       </fieldset>
-      <label className="flex items-start gap-3 text-sm leading-relaxed">
+      <label className="consent">
         <input
           type="checkbox"
-          className="mt-1 h-5 w-5"
           checked={values.consent_given}
           onChange={(event) => update("consent_given", event.target.checked)}
         />
