@@ -17,9 +17,9 @@ export function Sources() {
           ))}
         </ul>
         <p className="measure mt-4 text-text-muted">
-          Starting prices quoted from unofficial listings are labelled as unofficial. Deposit amounts,
-          incentives, occupancy, lot widths, and sales-centre hours stay marked to be announced until
-          Ballymore Homes publishes them.
+          Starting prices are shown by home type and are subject to change. Deposit amounts, incentives,
+          occupancy, lot widths, and sales-centre hours stay marked to be announced until Ballymore Homes
+          publishes them.
         </p>
       </div>
     </section>

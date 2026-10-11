@@ -14,6 +14,7 @@ export function Footer() {
             alt="Derry Lane Towns"
             width={LOGO_WIDTH}
             height={LOGO_HEIGHT}
+            unoptimized
             className="h-16 w-auto"
           />
           <div className="mt-5">

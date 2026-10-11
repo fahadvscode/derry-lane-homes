@@ -21,7 +21,7 @@ import { breadcrumbSchema, imageSchema, residenceSchema } from "@/lib/schema";
 export const metadata = pageMetadata({
   title: "Derry Lane Towns | Mississauga Pre-Construction Townhomes",
   description:
-    "Derry Lane Towns is a 120-home pre-construction townhome community by Ballymore Homes in Mississauga. Register for VIP pricing and floor plans.",
+    "Derry Lane Towns by Ballymore Homes in Mississauga: back-to-back, street, and rear-lane townhomes from the high $700,000s, semis from $1 million, and detached homes from $1.2 million.",
   path: "/",
 });
 
@@ -77,7 +77,7 @@ export default function HomePage() {
       <section className="section bg-surface-alt" aria-labelledby="styles">
         <div className="page-wrap">
           <h2 id="styles" className="max-w-[22ch] text-3xl text-brand-deep md:text-4xl">
-            Townhome styles at Derry Lane Towns
+            Home types at Derry Lane Towns
           </h2>
           <div className="mt-6 grid gap-4">
             {STYLE_NOTES.map((paragraph) => (

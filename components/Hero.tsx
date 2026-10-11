@@ -24,8 +24,9 @@ export function Hero() {
           Derry Lane Towns — New Pre-Construction Townhomes in Mississauga
         </h1>
         <p className="measure mt-5 text-lg text-text-on-dark">
-          A collection of 120 back-to-back, street, and rear-lane townhomes by Ballymore Homes, coming to
-          Derry Road West and Hurontario Street in Mississauga&apos;s Meadowvale Village.
+          Back-to-back, street, and rear-lane townhomes, plus semi-detached and detached homes, by Ballymore
+          Homes at Derry Road West and Hurontario Street. Townhomes from the high $700,000s, semis from $1
+          million, and detached homes from $1.2 million.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link href="/register" className="btn">

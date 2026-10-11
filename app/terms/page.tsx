@@ -41,8 +41,8 @@ export default function TermsPage() {
               <p className="measure mt-3">{SPEC_DISCLAIMER}</p>
               <p className="measure mt-3">
                 Facts on this site are drawn from the builder&apos;s public project page and from the City of
-                Mississauga planning record where those sources state them. Unofficial listing prices are
-                labelled as unofficial. Deposit amounts, incentives, maintenance fees, occupancy, lot widths,
+                Mississauga planning record where those sources state them. Starting prices are shown by home
+                type and are subject to change. Deposit amounts, incentives, maintenance fees, occupancy, lot widths,
                 school rankings, and sales-centre hours are shown as to be announced when they have not been
                 confirmed. Nothing here is financial, legal, or tax advice.
               </p>

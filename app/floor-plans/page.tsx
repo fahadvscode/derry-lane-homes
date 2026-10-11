@@ -12,7 +12,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata = pageMetadata({
   title: "Derry Lane Towns Floor Plans | Mississauga Towns",
   description:
-    "See home types at Derry Lane Towns: back-to-back, street, and rear-lane townhomes from 2-4 bedrooms, up to 2,000+ sq ft, in Mississauga.",
+    "Derry Lane Towns home types: back-to-back, street, and rear-lane townhomes from the high $700,000s, semi-detached homes from $1 million, and detached homes from $1.2 million.",
   path: "/floor-plans",
 });
 
@@ -75,9 +75,9 @@ export default function FloorPlansPage() {
               attached to each plan. Until then, lot widths remain to be announced.
             </p>
             <p className="measure">
-              Semi-detached and detached homes are part of the application — two of each — but no separate
-              plans or prices have been published for them. Buyers who want those forms can still note that
-              interest on the registration form.
+              Semi-detached homes are priced from $1 million and detached homes are priced from $1.2 million.
+              Townhomes are priced from the high $700,000s. Separate unit plans have not been released for any
+              of these forms. Buyers can note the home type they want on the registration form.
             </p>
             <p className="measure">
               <Link href="/register" className="prose-link">

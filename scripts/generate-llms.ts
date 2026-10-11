@@ -35,7 +35,7 @@ const llms = `# Derry Lane Towns
 - Home types: Back-to-back, street, and rear-lane townhomes; 2 semi-detached; 2 detached
 - Total homes: 120 townhomes + 4 single-family homes
 - Sizes: 2-4 bedrooms, up to 3 bathrooms, up to ~2,000+ sq ft
-- Starting price: High $700,000s CAD (unofficial, as of October 2026)
+- Starting prices: Townhomes from the high $700,000s; semi-detached from $1 million; detached from $1.2 million
 - Deposit: To be announced
 - Occupancy: To be announced
 - Status: Coming Soon — Registration Open; City of Mississauga rezoning application OZ/OPA 24-2 W11 under review
@@ -93,7 +93,9 @@ const blocks = [
   ...QUICK_FACTS.map((row) => `${row.field}: ${row.detail}`),
   `## Floor plans`,
   PASSAGES.types,
-  ...HOME_TYPES.map((plan) => `${plan.name}. Beds ${plan.beds}. Baths ${plan.baths}. Size ${plan.size}. ${plan.body}`),
+  ...HOME_TYPES.map(
+    (plan) => `${plan.name}. ${plan.from}. Beds ${plan.beds}. Baths ${plan.baths}. Size ${plan.size}. ${plan.body}`,
+  ),
   FLOOR_PLAN_NOTE,
   `## Pricing`,
   PASSAGES.price,

@@ -13,6 +13,7 @@ export function Nav() {
             width={LOGO_WIDTH}
             height={LOGO_HEIGHT}
             priority
+            unoptimized
             className="h-12 w-auto md:h-14"
           />
         </Link>

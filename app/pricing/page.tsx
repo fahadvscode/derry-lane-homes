@@ -12,7 +12,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata = pageMetadata({
   title: "Derry Lane Towns Prices & Deposit Structure",
   description:
-    "Derry Lane Towns pricing starts from the high $700,000s CAD. See the price range, deposit schedule, and incentives for this Mississauga community.",
+    "Derry Lane Towns townhomes start from the high $700,000s, semi-detached homes from $1 million, and detached homes from $1.2 million.",
   path: "/pricing",
 });
 
@@ -23,11 +23,11 @@ export default function PricingPage() {
       <Breadcrumbs current="Pricing" />
       <header className="bg-brand-deep text-text-on-dark">
         <div className="page-wrap py-16 md:py-20">
-          <p className="eyebrow text-[#f3d7c8]">Unofficial until the builder publishes a list</p>
+          <p className="eyebrow text-[#f3d7c8]">Starting prices by home type</p>
           <h1 className="mt-3 max-w-[16ch] text-4xl text-white md:text-5xl">Derry Lane Towns Prices</h1>
           <p className="measure mt-5 text-lg">
-            Derry Lane Towns prices have not been published by Ballymore Homes. The only figure in circulation
-            as of October 2026 is an unofficial early listing that starts townhomes in the high $700,000s CAD.
+            Back-to-back, street, and rear-lane townhomes are priced from the high $700,000s. Semi-detached
+            homes are priced from $1 million, and detached homes are priced from $1.2 million.
           </p>
         </div>
       </header>
@@ -42,10 +42,9 @@ export default function PricingPage() {
             <PricingTable />
           </div>
           <p className="measure mt-6">
-            That starting point applies to the townhome collection only. Pricing for the two semi-detached
-            homes and the two detached homes is not yet available. A high-$700,000s phrase is a range, not a
-            list price, and it is not an offer from this website. Use it to understand the reported entry
-            band while the project is still marked Coming Soon.
+            These are starting prices for each home type, not a price for every plan. They are subject to
+            change, and they are not an offer from this website. A unit-by-unit price list has not been
+            released.
           </p>
           <SpecDisclaimer />
         </div>

@@ -4,8 +4,8 @@
  * The footer date, sitemap lastmod, JSON-LD dateModified, and llms.txt all read this constant.
  */
 
-export const LAST_UPDATED = "2026-10-10";
-export const LAST_UPDATED_DISPLAY = "October 10, 2026";
+export const LAST_UPDATED = "2026-10-11";
+export const LAST_UPDATED_DISPLAY = "October 11, 2026";
 
 export const SITE_URL = "https://derrylanehomes.com";
 export const SITE_NAME = "Derry Lane Homes";
@@ -61,7 +61,8 @@ export const PROJECT = {
   bedrooms: "2 to 4 bedrooms",
   bathrooms: "up to 3 bathrooms",
   size: "up to approximately 2,000+ sq. ft.",
-  startingPrice: "High $700,000s CAD",
+  startingPrice:
+    "Townhomes from the high $700,000s; semi-detached from $1 million; detached from $1.2 million",
   application: "OZ/OPA 24-2 W11 & 21T-M 24-1 W11",
   applicationStatus: "Under review",
   planner: "Emma Bunting, City of Mississauga",
@@ -79,7 +80,10 @@ export const QUICK_FACTS: { field: string; detail: string }[] = [
   { field: "City", detail: "Mississauga, Peel Region, Ontario" },
   { field: "Total Homes", detail: "120 townhomes + 4 single-family homes" },
   { field: "Sizes", detail: "2-4 bedrooms, up to 3 bathrooms, up to ~2,000+ sq. ft." },
-  { field: "Starting Price", detail: "High $700,000s CAD (unofficial — not yet published by the builder)" },
+  {
+    field: "Starting Price",
+    detail: "Townhomes from the high $700,000s; semis from $1 million; detached from $1.2 million",
+  },
   { field: "Deposit", detail: "To be announced" },
   { field: "Estimated Occupancy", detail: "To be announced" },
   { field: "Status", detail: "Coming Soon — Registration Open" },
@@ -91,6 +95,7 @@ export const HOME_TYPES = [
     beds: "2–4",
     baths: "up to 3",
     size: "up to ~2,000+ sq. ft.",
+    from: "From the high $700,000s",
     image: "/images/derry-lane-rear-lane.jpg",
     alt: "Illustrative rear-lane townhomes at Derry Lane Towns, with garages on a service lane behind the homes",
     body: "Rear-lane townhomes place the garage and driveway on a service lane behind the home, keeping the street-facing frontage clean and pedestrian-friendly. Based on the City of Mississauga's development application for 376 & 390 Derry Road West.",
@@ -100,6 +105,7 @@ export const HOME_TYPES = [
     beds: "2–4",
     baths: "up to 3",
     size: "up to ~2,000+ sq. ft.",
+    from: "From the high $700,000s",
     image: "/images/derry-lane-street-towns.jpg",
     alt: "Illustrative street-facing townhomes at Derry Lane Towns in Meadowvale Village",
     body: "Traditional street-facing townhomes with direct frontage onto the internal community streets, part of the 120-home collection planned for the site.",
@@ -109,19 +115,36 @@ export const HOME_TYPES = [
     beds: "2–4",
     baths: "up to 3",
     size: "up to ~2,000+ sq. ft.",
+    from: "From the high $700,000s",
     image: "/images/derry-lane-back-to-back.jpg",
     alt: "Illustrative back-to-back townhomes at Derry Lane Towns, sharing a common rear wall",
     body: "A more compact, efficiently laid-out townhome style sharing a common rear wall with a neighbouring unit — a configuration included in the original concept plan for this site.",
   },
+  {
+    name: "Semi-Detached",
+    beds: "To be announced",
+    baths: "To be announced",
+    size: "To be announced",
+    from: "From $1 million",
+    body: "Semi-detached homes are part of the Derry Lane Towns collection, priced from $1 million. Unit plans and lot widths have not been released.",
+  },
+  {
+    name: "Detached",
+    beds: "To be announced",
+    baths: "To be announced",
+    size: "To be announced",
+    from: "From $1.2 million",
+    body: "Detached homes are part of the Derry Lane Towns collection, priced from $1.2 million. Unit plans and lot widths have not been released.",
+  },
 ] as const;
 
 export const PRICE_ROWS: { field: string; detail: string }[] = [
-  { field: "Starting price", detail: "High $700,000s CAD" },
   {
-    field: "Source",
-    detail: "Unofficial agent listing, as of October 2026 — not yet confirmed by Ballymore Homes",
+    field: "Townhomes",
+    detail: "From the high $700,000s — back-to-back, street towns, and rear-lane towns",
   },
-  { field: "Price basis", detail: "Townhome collection; detached and semi-detached pricing not yet available" },
+  { field: "Semi-detached", detail: "From $1 million" },
+  { field: "Detached", detail: "From $1.2 million" },
 ];
 
 export const DEPOSIT_ROWS: { milestone: string; amount: string; due: string }[] = [
@@ -212,16 +235,16 @@ export const GALLERY = [
 ] as const;
 
 export const ANSWER_FIRST =
-  "Derry Lane Towns is a pre-construction townhome community by Ballymore Homes at 376 and 390 Derry Road West in Mississauga's Meadowvale Village. The plan includes 120 three-storey back-to-back, street, and rear-lane townhomes plus four single-family homes, with 2 to 4 bedrooms and pricing reported from the high $700,000s CAD. The project is currently in pre-launch registration.";
+  "Derry Lane Towns is a pre-construction community by Ballymore Homes at 376 and 390 Derry Road West in Mississauga's Meadowvale Village. It includes back-to-back, street, and rear-lane townhomes, plus semi-detached and detached homes. Townhomes are priced from the high $700,000s, semi-detached homes from $1 million, and detached homes from $1.2 million. The project is currently in pre-launch registration.";
 
 export const PASSAGES = {
   what: "Derry Lane Towns is a pre-construction townhome community by Ballymore Homes at 376 and 390 Derry Road West in Mississauga's Meadowvale Village. Ballymore Homes is an Ontario builder founded in 1995 and based in Richmond Hill. The plan includes 120 three-storey townhomes — back-to-back, street, and rear-lane styles — plus two semi-detached and two detached homes.",
   price:
-    "As of October 2026, early agent listings price Derry Lane Towns townhomes starting from the high $700,000s CAD. Ballymore Homes has not yet published official pricing on its own project page, which remains marked \"Coming Soon,\" so this figure should be treated as preliminary until VIP pricing is officially released.",
+    "Townhomes at Derry Lane Towns — back-to-back, street towns, and rear-lane towns — are priced from the high $700,000s. Semi-detached homes are priced from $1 million, and detached homes are priced from $1.2 million. These are starting prices and are subject to change. A unit-by-unit price list has not been released.",
   where:
     "Derry Lane Towns sits at 376 and 390 Derry Road West in Mississauga, on the south side of Derry Road West just west of Hurontario Street. The site is in the historic Meadowvale Village area, Ontario's first Heritage Conservation District, about 7 minutes from Highway 401 and 13 minutes from Meadowvale GO Station.",
   types:
-    "Derry Lane Towns will offer 120 three-storey townhomes in back-to-back, street, and rear-lane layouts, plus two semi-detached and two detached homes. Units are planned from 2 to 4 bedrooms, up to 3 bathrooms, and up to roughly 2,000+ square feet, per the City of Mississauga's development application for the site.",
+    "Derry Lane Towns will offer back-to-back, street, and rear-lane townhomes, plus semi-detached and detached homes. The city application describes 120 three-storey townhomes, two semi-detached homes, and two detached homes, planned from 2 to 4 bedrooms, up to 3 bathrooms, and up to roughly 2,000+ square feet. Townhomes are priced from the high $700,000s, semi-detached homes from $1 million, and detached homes from $1.2 million.",
   launch:
     "Derry Lane Towns is currently in pre-launch, listed as \"Coming Soon\" on Ballymore Homes' own site as of October 2026. A City of Mississauga rezoning application for the site (OZ/OPA 24-2 W11) remains under review, and no official VIP launch date has been announced.",
   deposit:
@@ -232,15 +255,15 @@ export const PASSAGES = {
   occupancy:
     "No occupancy date for Derry Lane Towns has been confirmed by Ballymore Homes. One unofficial agent listing estimates occupancy around 2028, but this has not been verified against the builder's own materials and should be treated as a preliminary estimate only.",
   investment:
-    "Whether Derry Lane Towns is a good investment depends on an individual buyer's goals, financing, and timeline, and this site does not provide financial advice. Relevant factors include its pre-launch pricing from the high $700,000s, its Meadowvale Village location near Highway 401 and GO transit, and its still-unconfirmed occupancy and deposit terms.",
+    "Whether Derry Lane Towns is a good investment depends on an individual buyer's goals, financing, and timeline, and this site does not provide financial advice. Relevant factors include townhomes from the high $700,000s, semi-detached homes from $1 million, and detached homes from $1.2 million, plus its Meadowvale Village location near Highway 401 and GO transit, and its still-unconfirmed occupancy and deposit terms.",
   transit:
     "Derry Lane Towns is close to Highways 401, 407, and 410, each within about a 10-minute drive, and roughly 10 to 13 minutes from Meadowvale GO Station on the Milton line to Union Station. Toronto Pearson International Airport is about a 15 to 20-minute drive, and the planned Hazel McCallion LRT will run along nearby Hurontario Street.",
   meadowvale:
     "Meadowvale Village is a historic neighbourhood in Mississauga dating to 1819 and designated Ontario's first Heritage Conservation District in 1980. It blends preserved 19th-century buildings along Old Derry Road with modern conveniences nearby, including Derry Village Square Plaza directly across from the Derry Lane Towns site.",
   best:
-    "Mississauga's current pre-construction townhome launches include Derry Lane Towns by Ballymore Homes in Meadowvale Village, priced from the reported high $700,000s, and Applewood Towns by Sierra Communities at Dixie Road and Burnhamthorpe Road East, also priced from the $700s. Location, builder track record, and deposit structure are the key factors to compare.",
+    "Mississauga's current pre-construction launches include Derry Lane Towns by Ballymore Homes in Meadowvale Village, with townhomes from the high $700,000s, semi-detached homes from $1 million, and detached homes from $1.2 million, and Applewood Towns by Sierra Communities at Dixie Road and Burnhamthorpe Road East, priced from the $700s. Location, builder track record, and deposit structure are the key factors to compare.",
   compare:
-    "Derry Lane Towns' reported high-$700,000s starting price is in line with Applewood Towns, also priced from the $700s at Dixie Road and Burnhamthorpe Road East. Derry Lane Towns sits in the lower-density, heritage-designated Meadowvale Village, while Applewood Towns is closer to Mississauga's denser eastern retail corridor near Dixie Outlet Mall and Sherway Gardens.",
+    "Derry Lane Towns townhomes start from the high $700,000s, in line with Applewood Towns, also priced from the $700s at Dixie Road and Burnhamthorpe Road East. Derry Lane Towns also includes semi-detached homes from $1 million and detached homes from $1.2 million. It sits in the lower-density, heritage-designated Meadowvale Village, while Applewood Towns is closer to Mississauga's denser eastern retail corridor near Dixie Outlet Mall and Sherway Gardens.",
   registerCost:
     "No. Registering for updates on Derry Lane Towns through this site is free and simply adds a buyer's contact information to the project's priority notification list. There is no obligation to purchase, and registering does not reserve a specific unit or lock in a price.",
 } as const;
@@ -281,7 +304,7 @@ export const RETAIL_NOTE =
   "Derry Village Square Shopping Plaza sits directly across Derry Road West from the site, with everyday coffee shops, restaurants, grocery stores, and services. Heartland Town Centre, one of Mississauga's largest outdoor shopping destinations — home to Adidas, H&M, the GAP, Costco, Walmart, Canadian Tire, and The Keg — is a short drive away, and Square One Shopping Centre is roughly 17 minutes away. For recreation, Derrydale Golf Course, a 12-hole course styled after Scotland's original links, is about a 3-minute drive, and the 150-acre Meadowvale Conservation Area along the Credit River is about 10 minutes away, with trails and picnic areas along the water.";
 
 export const COMPARISON_BODY =
-  "Derry Lane Towns' reported high-$700,000s starting price is in line with other current Mississauga townhome launches, such as Applewood Towns by Sierra Communities at Dixie Road and Burnhamthorpe Road East, also priced from the $700s. Where Applewood Towns sits closer to Mississauga's denser eastern retail corridor near Dixie Outlet Mall and Sherway Gardens, Derry Lane Towns sits within the lower-density, heritage-designated Meadowvale Village, closer to Highway 401 and the Milton GO corridor.";
+  "Derry Lane Towns townhomes start from the high $700,000s, in line with other current Mississauga townhome launches such as Applewood Towns by Sierra Communities at Dixie Road and Burnhamthorpe Road East, also priced from the $700s. Semi-detached homes at Derry Lane Towns start from $1 million, and detached homes start from $1.2 million. Where Applewood Towns sits closer to Mississauga's denser eastern retail corridor near Dixie Outlet Mall and Sherway Gardens, Derry Lane Towns sits within the lower-density, heritage-designated Meadowvale Village, closer to Highway 401 and the Milton GO corridor.";
 
 export const COMPARISON_ROWS: { field: string; derry: string; applewood: string }[] = [
   { field: "Builder", derry: "Ballymore Homes", applewood: "Sierra Communities" },
@@ -292,7 +315,7 @@ export const COMPARISON_ROWS: { field: string; derry: string; applewood: string 
   },
   {
     field: "Starting price",
-    derry: "High $700,000s CAD (unofficial, October 2026)",
+    derry: "Townhomes from the high $700,000s; semis from $1 million; detached from $1.2 million",
     applewood: "From the $700s (indicative only)",
   },
   { field: "Homes", derry: "120 townhomes + 2 semi-detached + 2 detached", applewood: "70 units" },
@@ -321,6 +344,7 @@ export const CONFIRMED = [
   "Address: 376 and 390 Derry Road West, Mississauga, ON L5W 1N6, on the south side of Derry Road West west of Hurontario Street.",
   "Unit mix from the city application: 120 three-storey townhomes, 2 semi-detached homes, and 2 detached homes, plus a commercial building on the Derry Road West frontage.",
   "Bedroom and size range published in listing material: 2 to 4 bedrooms, up to 3 bathrooms, up to about 2,000+ square feet.",
+  "Starting prices: townhomes from the high $700,000s, semi-detached homes from $1 million, and detached homes from $1.2 million.",
   "Launch status on the builder's own page: Coming Soon.",
 ];
 
@@ -333,13 +357,14 @@ export const TBA = [
   "Fraser Institute rankings for the named schools.",
   "Exact lot widths for each townhome style.",
   "Sales centre address and hours.",
-  "Unit-by-unit floor plans and official builder pricing.",
+  "Unit-by-unit floor plans and a price for each individual plan.",
 ];
 
 export const STYLE_NOTES = [
   "A back-to-back townhome shares a common rear wall with a neighbouring unit and typically has no rear yard. That layout lets a builder fit more homes on a parcel, which is why it often lands at a lower price point than a traditional town with a backyard. At Derry Lane Towns it is one of three townhome styles in the 120-home plan, not a separate community.",
   "A rear-lane townhome keeps the garage and driveway on a service lane behind the home. The street side can stay a sidewalk, front door, and landscaping, without a cut of driveway at every unit. The city application describes this among the forms planned on the Derry Road West site, and it is the feature that keeps the frontage pedestrian-focused.",
   "A street townhome is the familiar form: the front door and often the driveway face an internal community street. Lot width for each of these styles is to be announced. Until Ballymore Homes releases plans, the only defensible size statement is the published range — 2 to 4 bedrooms, up to 3 bathrooms, and up to roughly 2,000+ square feet.",
+  "Semi-detached homes and detached homes are also coming. Semi-detached homes are priced from $1 million, and detached homes are priced from $1.2 million. Townhomes — back-to-back, street towns, and rear-lane towns — are priced from the high $700,000s. Lot widths and unit plans for the semi-detached and detached homes are still to be announced.",
 ];
 
 export const BLOG = {
@@ -360,8 +385,8 @@ export const BLOG = {
     "For Derry Lane Towns specifically, every deposit cell is still to be announced. Ballymore Homes had not published signing amounts, later instalments, or an occupancy top-up as of October 10, 2026. A typical market pattern is context, not a quote. The same caution applies to incentives: nothing on this site states a décor credit, a development-charge cap, or an assignment fee as a fact of this project.",
   ],
   comparable: [
-    "Derry Lane Towns' reported high-$700,000s starting price sits in a similar range to Applewood Towns by Sierra Communities at Dixie Road and Burnhamthorpe Road East, also priced from the $700s, with sizes from roughly 798 to 1,560 square feet across 70 homes. Buyers comparing the two are generally weighing Meadowvale Village's lower-density, heritage-adjacent setting against Applewood Towns' proximity to Mississauga's denser eastern retail corridor near Dixie Outlet Mall and Sherway Gardens. Both remain pre-construction as of October 2026, and pricing on each is subject to change.",
-    "Applewood Towns pricing is indicative only; the source page did not show a clear as-of date. Derry Lane Towns' high-$700,000s figure is likewise unofficial. Neither number is an offer, and neither should be used to calculate a mortgage payment until the builder publishes a price list. Occupancy for Derry Lane Towns is to be announced. An unofficial 2028 estimate exists and is not confirmed.",
+    "Derry Lane Towns townhomes start from the high $700,000s, with semi-detached homes from $1 million and detached homes from $1.2 million. Applewood Towns by Sierra Communities at Dixie Road and Burnhamthorpe Road East is priced from the $700s, with sizes from roughly 798 to 1,560 square feet across 70 homes. Buyers comparing the two are generally weighing Meadowvale Village's lower-density, heritage-adjacent setting against Applewood Towns' proximity to Mississauga's denser eastern retail corridor near Dixie Outlet Mall and Sherway Gardens. Both remain pre-construction as of October 2026, and pricing on each is subject to change.",
+    "Applewood Towns pricing is indicative only; the source page did not show a clear as-of date. The Derry Lane Towns figures are starting prices by home type, not a price for each plan, and they are not an offer. Occupancy for Derry Lane Towns is to be announced. An unofficial 2028 estimate exists and is not confirmed.",
   ],
   steps: [
     "Identify the specific project and confirm its builder, intersection, and current status (pre-launch, VIP, or public sale) directly from the builder's own materials where possible.",
@@ -371,7 +396,7 @@ export const BLOG = {
     "Have any Agreement of Purchase and Sale reviewed by a real estate lawyer before signing — this is standard practice for any Ontario pre-construction purchase.",
   ],
   unconfirmed: [
-    "A useful way to read any 2026 Mississauga launch is to split the page into three piles: what the builder has published, what the municipality has filed, and what an unofficial listing has guessed. For Derry Lane Towns, the builder's own page, reviewed in October 2026, says Coming Soon and does not list prices or floor plans. The City of Mississauga file OZ/OPA 24-2 W11 and plan of subdivision 21T-M 24-1 W11 was still under review on that date. The unit count in that application is 120 townhomes plus two semi-detached and two detached homes. An unofficial listing's high-$700,000s starting price, and a 2028 occupancy guess, sit in the third pile. They are worth knowing. They are not a contract.",
+    "A useful way to read any 2026 Mississauga launch is to split the page into three piles: what the builder has published, what the municipality has filed, and what is still only an estimate. For Derry Lane Towns, the builder's own page, reviewed in October 2026, says Coming Soon and does not list floor plans. Starting prices on this site are townhomes from the high $700,000s, semi-detached homes from $1 million, and detached homes from $1.2 million. The City of Mississauga file OZ/OPA 24-2 W11 and plan of subdivision 21T-M 24-1 W11 was still under review on that date. The unit count in that application is 120 townhomes plus two semi-detached and two detached homes. A 2028 occupancy guess is not confirmed. Starting prices are not a contract, and they are not a price for each plan.",
     "The same split applies to schools and drive times. Named schools within a short drive include Le Flambeau Elementary School, Meadowvale Village Public School, St. Veronica Elementary School, and David Leeder Middle School. This guide does not quote Fraser Institute rankings, because those rankings were not verified against a current table. Sheridan College's Davis Campus and the University of Toronto Mississauga campus are within driving distance. Published minute counts for the Sheridan drive do not agree with each other, so this page does not treat one of them as exact.",
     "Before a pre-construction townhome becomes a purchase, four documents matter more than a landing page: the builder's price list, the floor plans with areas, the deposit schedule inside the Agreement of Purchase and Sale, and a lawyer's review of assignment, rental, and occupancy clauses. None of those documents had been published for Derry Lane Towns when this guide was written on October 10, 2026. Registration here is a way to hear when they appear. It does not hold a lot, and it does not lock a price.",
   ],
