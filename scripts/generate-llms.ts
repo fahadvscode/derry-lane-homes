@@ -1,4 +1,4 @@
-import { writeFileSync } from "node:fs";
+import { mkdirSync, writeFileSync } from "node:fs";
 import { FAQ_ITEMS } from "../lib/faq";
 import {
   BLOG,
@@ -157,5 +157,7 @@ ${sitemapRoutes
 </urlset>
 `;
 
+mkdirSync("public/sitemaps", { recursive: true });
 writeFileSync("public/sitemap.xml", sitemap);
-console.log("Wrote public/llms.txt, public/llms-full.txt, and public/sitemap.xml");
+writeFileSync("public/sitemaps/sitemap.xml", sitemap);
+console.log("Wrote public/llms.txt, public/llms-full.txt, and sitemap files");

@@ -18,6 +18,6 @@ const agents = [
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [...agents.map((userAgent) => ({ userAgent, allow: "/" })), { userAgent: "*", allow: "/" }],
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemaps/sitemap.xml`,
   };
 }
