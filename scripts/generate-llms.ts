@@ -128,4 +128,34 @@ const blocks = [
 
 writeFileSync("public/llms.txt", llms);
 writeFileSync("public/llms-full.txt", `${blocks.join("\n\n")}\n`);
-console.log("Wrote public/llms.txt and public/llms-full.txt");
+
+const sitemapRoutes: { path: string; priority: string }[] = [
+  { path: "/", priority: "1.0" },
+  { path: "/floor-plans", priority: "0.9" },
+  { path: "/pricing", priority: "0.9" },
+  { path: "/location", priority: "0.8" },
+  { path: "/gallery", priority: "0.6" },
+  { path: "/faq", priority: "0.9" },
+  { path: "/register", priority: "0.9" },
+  { path: "/blog/mississauga-pre-construction-guide", priority: "0.7" },
+  { path: "/privacy", priority: "0.2" },
+  { path: "/terms", priority: "0.2" },
+];
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapRoutes
+  .map((route) => {
+    const loc = route.path === "/" ? `${SITE_URL}/` : `${SITE_URL}${route.path}`;
+    return `<url>
+<loc>${loc}</loc>
+<lastmod>${LAST_UPDATED}</lastmod>
+<priority>${route.priority}</priority>
+</url>`;
+  })
+  .join("\n")}
+</urlset>
+`;
+
+writeFileSync("public/sitemap.xml", sitemap);
+console.log("Wrote public/llms.txt, public/llms-full.txt, and public/sitemap.xml");
