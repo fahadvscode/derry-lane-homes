@@ -22,6 +22,9 @@ export async function POST(request: Request) {
   const supabase = createAnonClient();
   if (!supabase) return withAmpCors(request, NextResponse.json({ ok: false }, { status: 500 }));
 
+  const path = lead.page_path.startsWith("/") ? lead.page_path : `/${lead.page_path}`;
+  const source = `${SITE_URL}${path === "/" ? "/" : path}`;
+
   const { error } = await supabase.from("derry_lane_homes_leads").insert({
     first_name: lead.first_name,
     last_name: lead.last_name,
@@ -34,7 +37,8 @@ export async function POST(request: Request) {
     is_broker: lead.is_broker,
     consent_given: true,
     consent_at: new Date().toISOString(),
-    page_path: lead.page_path,
+    page_path: path,
+    source,
     utm_source: lead.utm_source ?? null,
     utm_medium: lead.utm_medium ?? null,
     utm_campaign: lead.utm_campaign ?? null,

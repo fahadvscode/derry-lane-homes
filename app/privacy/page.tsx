@@ -36,8 +36,10 @@ export default function PrivacyPage() {
               <h2 className="text-2xl text-brand-deep">What is collected and why</h2>
               <p className="measure mt-3">
                 The VIP form collects first name, last name, email, phone, home-type interest, budget range,
-                buyer type, timeline, whether the person is a licensed real estate agent, the page the form was
-                sent from, and campaign parameters if they were present in the link (utm_source, utm_medium,
+                buyer type, timeline, and whether the person is a licensed real estate agent. The source saved
+                with each registration is the full link of the page on this website, such as
+                https://derrylanehomes.com/ or https://derrylanehomes.com/pricing. Campaign parameters are
+                stored if they were present in the link (utm_source, utm_medium,
                 utm_campaign, utm_term, utm_content). The purpose is to send updates about Derry Lane Towns and
                 similar pre-construction opportunities when consent is given. A consent checkbox, the time it
                 was recorded, and the page path are stored as the record of consent under Canada&apos;s

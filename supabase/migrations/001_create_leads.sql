@@ -13,6 +13,7 @@ create table if not exists derry_lane_homes_leads (
   consent_given boolean not null default false,
   consent_at timestamptz,
   page_path text,
+  source text,
   utm_source text,
   utm_medium text,
   utm_campaign text,
