@@ -32,7 +32,11 @@ create policy "anon can insert derry_lane_homes_leads"
 create table if not exists derry_lane_homes_privacy_requests (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz not null default now(),
+  first_name text,
+  last_name text,
   email text not null,
+  phone text,
+  is_broker boolean,
   message text not null,
   page_path text
 );

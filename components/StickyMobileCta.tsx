@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 export function StickyMobileCta() {
   const pathname = usePathname();
   const reduce = useReducedMotion();
-  if (pathname === "/register" || pathname === "/thank-you") return null;
+  if (pathname === "/" || pathname === "/register" || pathname === "/thank-you") return null;
 
   return (
     <motion.div

@@ -22,7 +22,7 @@ type FormValues = {
   budget_range: string;
   buyer_type: string;
   timeline: string;
-  is_broker: boolean;
+  is_broker: "" | "yes" | "no";
   consent_given: boolean;
   website: string;
 };
@@ -36,12 +36,18 @@ const EMPTY: FormValues = {
   budget_range: "",
   buyer_type: "",
   timeline: "",
-  is_broker: false,
+  is_broker: "",
   consent_given: false,
   website: "",
 };
 
-export function LeadForm({ location = "page" }: { location?: string }) {
+export function LeadForm({
+  location = "page",
+  variant = "full",
+}: {
+  location?: string;
+  variant?: "full" | "compact";
+}) {
   const router = useRouter();
   const started = useRef(0);
   const focused = useRef(false);
@@ -75,10 +81,31 @@ export function LeadForm({ location = "page" }: { location?: string }) {
       return;
     }
     const utm = readUtm();
+    const next: Record<string, string> = {};
+    if (!values.first_name.trim()) next.first_name = messageFor("first_name");
+    if (!values.last_name.trim()) next.last_name = messageFor("last_name");
+    if (!values.email.trim()) next.email = messageFor("email");
+    if (!values.phone.trim()) next.phone = messageFor("phone");
+    if (values.is_broker !== "yes" && values.is_broker !== "no") next.is_broker = messageFor("is_broker");
+    if (!values.consent_given) next.consent_given = messageFor("consent_given");
+    if (variant === "full") {
+      if (!values.home_type_interest) next.home_type_interest = messageFor("home_type_interest");
+      if (!values.budget_range) next.budget_range = messageFor("budget_range");
+      if (!values.buyer_type) next.buyer_type = messageFor("buyer_type");
+      if (!values.timeline) next.timeline = messageFor("timeline");
+    }
+    if (Object.keys(next).length) {
+      setErrors(next);
+      setFormError("Please correct the highlighted fields.");
+      return;
+    }
     const payload = {
-      ...values,
-      is_broker: values.is_broker,
-      consent_given: values.consent_given,
+      first_name: values.first_name,
+      last_name: values.last_name,
+      email: values.email,
+      phone: values.phone,
+      is_broker: values.is_broker === "yes",
+      consent_given: true as const,
       elapsed_ms: elapsed,
       page_path: window.location.pathname.slice(0, 200),
       website: values.website,
@@ -87,15 +114,23 @@ export function LeadForm({ location = "page" }: { location?: string }) {
       utm_campaign: utm.utm_campaign ?? null,
       utm_term: utm.utm_term ?? null,
       utm_content: utm.utm_content ?? null,
+      ...(variant === "full"
+        ? {
+            home_type_interest: values.home_type_interest,
+            budget_range: values.budget_range,
+            buyer_type: values.buyer_type,
+            timeline: values.timeline,
+          }
+        : {}),
     };
     const parsed = leadSchema.safeParse(payload);
     if (!parsed.success) {
-      const next: Record<string, string> = {};
+      const fieldErrors: Record<string, string> = {};
       for (const issue of parsed.error.issues) {
         const key = String(issue.path[0] ?? "form");
-        if (!next[key]) next[key] = messageFor(key);
+        if (!fieldErrors[key]) fieldErrors[key] = messageFor(key);
       }
-      setErrors(next);
+      setErrors(fieldErrors);
       setFormError("Please correct the highlighted fields.");
       return;
     }
@@ -116,7 +151,7 @@ export function LeadForm({ location = "page" }: { location?: string }) {
 
   return (
     <form onSubmit={onSubmit} onFocus={onFocus} noValidate className="relative grid gap-4">
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className={variant === "compact" ? "grid gap-3 sm:grid-cols-2" : "grid gap-4 md:grid-cols-2"}>
         <Field label="First name" id={`${baseId}-first`} error={errors.first_name}>
           <input
             id={`${baseId}-first`}
@@ -156,6 +191,8 @@ export function LeadForm({ location = "page" }: { location?: string }) {
             onChange={(event) => update("phone", event.target.value)}
           />
         </Field>
+        {variant === "full" && (
+          <>
         <SelectField
           label="Home type interest"
           id={`${baseId}-home`}
@@ -188,16 +225,29 @@ export function LeadForm({ location = "page" }: { location?: string }) {
           onChange={(event) => update("timeline", event.target.value)}
           options={TIMELINE_OPTIONS}
         />
+          </>
+        )}
       </div>
-      <label className="flex items-start gap-3 text-sm leading-relaxed">
-        <input
-          type="checkbox"
-          className="mt-1 h-5 w-5"
-          checked={values.is_broker}
-          onChange={(event) => update("is_broker", event.target.checked)}
-        />
-        <span>Are you a licensed real estate agent?</span>
-      </label>
+      <fieldset>
+        <legend className="mb-2 text-sm font-semibold">
+          Are you a broker? <span className="text-brand-accent-ink">*</span>
+        </legend>
+        <div className="grid grid-cols-2 gap-3">
+          {(["yes", "no"] as const).map((choice) => (
+            <label key={choice} className="choice">
+              <input
+                type="radio"
+                name={`${baseId}-broker`}
+                value={choice}
+                checked={values.is_broker === choice}
+                onChange={() => update("is_broker", choice)}
+              />
+              <span>{choice === "yes" ? "Yes" : "No"}</span>
+            </label>
+          ))}
+        </div>
+        {errors.is_broker && <p className="mt-1 text-sm font-semibold text-brand-accent-ink">{errors.is_broker}</p>}
+      </fieldset>
       <label className="flex items-start gap-3 text-sm leading-relaxed">
         <input
           type="checkbox"
@@ -218,7 +268,7 @@ export function LeadForm({ location = "page" }: { location?: string }) {
           onChange={(event) => update("website", event.target.value)}
         />
       </div>
-      <button type="submit" className="btn w-full md:w-auto" disabled={pending}>
+      <button type="submit" className="btn w-full" disabled={pending}>
         {pending ? "Sending…" : "Register for VIP Access"}
       </button>
       <p role="alert" aria-live="assertive" className="min-h-6 text-sm font-semibold text-brand-accent-ink">
@@ -238,6 +288,8 @@ function messageFor(key: string) {
       return "Enter a valid email address.";
     case "phone":
       return "Enter a Canadian phone number, such as 905-555-0134.";
+    case "is_broker":
+      return "Select yes or no.";
     case "consent_given":
       return "Consent is required to register.";
     case "home_type_interest":

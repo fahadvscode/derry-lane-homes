@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { headers } from "next/headers";
 import { Karla, Libre_Baskerville } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { Nav } from "@/components/Nav";
 import { StickyMobileCta } from "@/components/StickyMobileCta";
 import { Tracking } from "@/components/Tracking";
+import { ampUrlFor } from "@/lib/amp-document";
 import { SITE_URL } from "@/lib/content";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 import "./globals.css";
@@ -47,10 +49,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const headerList = await headers();
+  const ampHref = ampUrlFor(headerList.get("x-pathname") ?? "/");
   return (
     <html lang="en-CA" className={`${display.variable} ${sans.variable}`}>
       <body className="bg-surface font-sans text-text-primary antialiased">
+        {ampHref ? <link rel="amphtml" href={ampHref} /> : null}
         <JsonLd data={websiteSchema()} />
         <JsonLd data={organizationSchema()} />
         <a

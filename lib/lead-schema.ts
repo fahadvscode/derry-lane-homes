@@ -44,20 +44,29 @@ export const TIMELINE_OPTIONS = [
   { value: "just_researching", label: "Just researching" },
 ] as const;
 
+const brokerField = z
+  .union([z.boolean(), z.literal("yes"), z.literal("no"), z.literal("true"), z.literal("false")])
+  .transform((value) => value === true || value === "yes" || value === "true");
+
+const optionalElapsed = z.preprocess(
+  (value) => (value == null || value === "" ? undefined : Number(value)),
+  z.number().min(3000).optional(),
+);
+
 export const leadSchema = z.object({
   first_name: z.string().trim().min(1).max(80),
   last_name: z.string().trim().min(1).max(80),
   email: z.string().trim().email().max(200),
   phone: z.string().trim().regex(canadianPhone),
-  home_type_interest: z.enum(homeTypeValues),
-  budget_range: z.enum(budgetValues),
-  buyer_type: z.enum(buyerValues),
-  timeline: z.enum(timelineValues),
-  is_broker: z.boolean(),
-  consent_given: z.literal(true),
+  home_type_interest: z.enum(homeTypeValues).optional(),
+  budget_range: z.enum(budgetValues).optional(),
+  buyer_type: z.enum(buyerValues).optional(),
+  timeline: z.enum(timelineValues).optional(),
+  is_broker: brokerField,
+  consent_given: z.literal(true).or(z.literal("true")).transform(() => true as const),
   page_path: z.string().trim().min(1).max(200),
   website: z.string().max(0).optional(),
-  elapsed_ms: z.number().min(3000),
+  elapsed_ms: optionalElapsed,
   utm_source: z.string().max(200).nullish(),
   utm_medium: z.string().max(200).nullish(),
   utm_campaign: z.string().max(200).nullish(),
@@ -68,9 +77,13 @@ export const leadSchema = z.object({
 export type LeadInput = z.infer<typeof leadSchema>;
 
 export const privacyRequestSchema = z.object({
+  first_name: z.string().trim().min(1).max(80),
+  last_name: z.string().trim().min(1).max(80),
   email: z.string().trim().email().max(200),
+  phone: z.string().trim().regex(canadianPhone),
+  is_broker: brokerField,
   message: z.string().trim().min(10).max(2000),
   page_path: z.string().trim().min(1).max(200),
   website: z.string().max(0).optional(),
-  elapsed_ms: z.number().min(3000),
+  elapsed_ms: optionalElapsed,
 });
