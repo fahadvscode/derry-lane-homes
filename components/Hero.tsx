@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { HERO_ALT, HERO_IMAGE } from "@/lib/content";
+import { HERO_ALT, HERO_HEIGHT, HERO_IMAGE, HERO_WIDTH } from "@/lib/content";
 
 export function Hero() {
   return (
@@ -8,13 +8,16 @@ export function Hero() {
       <Image
         src={HERO_IMAGE}
         alt={HERO_ALT}
-        width={1600}
-        height={900}
+        width={HERO_WIDTH}
+        height={HERO_HEIGHT}
         priority
         sizes="100vw"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover object-[72%_center]"
       />
-      <div className="absolute inset-0 bg-brand-deep/55" aria-hidden="true" />
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-brand-deep/80 via-brand-deep/45 to-brand-deep/15"
+        aria-hidden="true"
+      />
       <div className="page-wrap relative flex min-h-[560px] flex-col justify-end py-16 md:min-h-[680px] md:py-24">
         <p className="eyebrow text-[#f3d7c8]">Coming Soon — Registration Open</p>
         <h1 className="mt-4 max-w-[16ch] text-4xl text-white md:text-6xl">

@@ -23,12 +23,12 @@ export default function GalleryPage() {
       <Breadcrumbs current="Gallery" />
       <header className="bg-brand-deep text-text-on-dark">
         <div className="page-wrap py-16 md:py-20">
-          <p className="eyebrow text-[#f3d7c8]">Illustrations, not builder art</p>
+          <p className="eyebrow text-[#f3d7c8]">Streetscape and site context</p>
           <h1 className="mt-3 max-w-[16ch] text-4xl text-white md:text-5xl">Derry Lane Towns Renderings</h1>
           <p className="measure mt-5 text-lg">
-            Official Derry Lane Towns renderings have not been published on this independent site. The images
-            below are original illustrations of the Meadowvale Village setting, the rear-lane idea, and the
-            nearby conservation landscape.
+            The Derry Lane Towns streetscape shows the townhome frontage along a landscaped road. The other
+            frames are site-context illustrations of the rear-lane idea, Meadowvale Village, and the nearby
+            conservation landscape. A measured site plan has not been released.
           </p>
         </div>
       </header>
@@ -38,11 +38,9 @@ export default function GalleryPage() {
             Site context
           </h2>
           <p className="measure mt-5">
-            Ballymore Homes has not licensed streetscape art to derrylanehomes.com. Rather than reproduce a
-            builder rendering without confirmed rights, this gallery shows drawings made for this page. They
-            are labelled as illustrations. A sales-centre display, if one opens, will be the place to see the
-            builder&apos;s own images. No site plan with lot lines is shown here because a measured plan has
-            not been released for publication.
+            The first image is the Derry Lane Towns streetscape. The rear-lane, heritage, and conservation
+            frames are illustrations made for this page, and each caption says so. No site plan with lot lines
+            is shown here because a measured plan has not been released for publication.
           </p>
           <div className="mt-8 grid gap-8">
             {GALLERY.map((image) => (

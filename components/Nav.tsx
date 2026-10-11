@@ -1,13 +1,20 @@
+import Image from "next/image";
 import Link from "next/link";
-import { NAV_LINKS } from "@/lib/content";
+import { LOGO_HEIGHT, LOGO_IMAGE, LOGO_WIDTH, NAV_LINKS } from "@/lib/content";
 
 export function Nav() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-brand-primary text-text-on-dark">
       <div className="page-wrap flex items-center justify-between gap-4 py-3">
-        <Link href="/" className="font-display text-xl leading-none text-white no-underline">
-          Derry Lane Towns
-          <span className="mt-1.5 block h-px w-12 bg-brand-accent" aria-hidden="true" />
+        <Link href="/" className="block shrink-0 no-underline">
+          <Image
+            src={LOGO_IMAGE}
+            alt="Derry Lane Towns"
+            width={LOGO_WIDTH}
+            height={LOGO_HEIGHT}
+            priority
+            className="h-12 w-auto md:h-14"
+          />
         </Link>
         <nav aria-label="Primary" className="hidden items-center gap-5 text-sm font-semibold md:flex">
           {NAV_LINKS.map((link) => (

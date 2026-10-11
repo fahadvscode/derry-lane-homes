@@ -4,13 +4,14 @@ import {
   HERO_ALT,
   HERO_IMAGE,
   LAST_UPDATED,
+  LOGO_IMAGE,
   PROJECT,
   SITE_NAME,
   SITE_URL,
 } from "@/lib/content";
 
 export const IMAGE_LICENSE =
-  "Original illustrative site-context image created for derrylanehomes.com. Not an official Ballymore Homes rendering. Builder renderings are not published here because independent usage rights were not confirmed.";
+  "Images published on derrylanehomes.com are for information only and are subject to change. The streetscape was supplied for this site. Other gallery frames are original site-context illustrations.";
 
 export function organizationSchema() {
   return {
@@ -18,6 +19,7 @@ export function organizationSchema() {
     "@type": "Organization",
     name: SITE_NAME,
     url: SITE_URL,
+    logo: `${SITE_URL}${LOGO_IMAGE}`,
     description:
       "An independent information and registration resource for Derry Lane Towns, a pre-construction townhome community by Ballymore Homes in Mississauga, Ontario. Not affiliated with or endorsed by the builder.",
     dateModified: LAST_UPDATED,

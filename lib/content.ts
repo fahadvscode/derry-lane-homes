@@ -18,9 +18,14 @@ export const GEO = {
   longitude: -79.7147946,
 } as const;
 
-export const HERO_IMAGE = "/images/derry-lane-towns-streetscape.jpg";
+export const LOGO_IMAGE = "/images/DL-logo.png";
+export const LOGO_WIDTH = 463;
+export const LOGO_HEIGHT = 279;
+export const HERO_IMAGE = "/images/streetscape.jpg";
+export const HERO_WIDTH = 1169;
+export const HERO_HEIGHT = 387;
 export const HERO_ALT =
-  "Illustrative streetscape of Derry Lane Towns townhomes along a tree-lined road at Derry Road West in Mississauga's Meadowvale Village";
+  "Streetscape of Derry Lane Towns townhomes along a landscaped road in Mississauga";
 
 export const INDEPENDENCE_DISCLAIMER =
   "This is an independent information and registration website for Derry Lane Towns. It is not the official website of Ballymore Homes and is not affiliated with or endorsed by the builder. All renderings, pricing, sizes, and specifications are for illustration only and are subject to change without notice. E.&O.E.";
@@ -176,9 +181,9 @@ export const GALLERY = [
     src: HERO_IMAGE,
     alt: HERO_ALT,
     caption:
-      "Illustrative streetscape for Derry Lane Towns at Derry Road West and Hurontario Street. This is not an official Ballymore Homes rendering.",
-    width: 1600,
-    height: 900,
+      "Streetscape of Derry Lane Towns townhomes along a landscaped road at Derry Road West in Mississauga.",
+    width: HERO_WIDTH,
+    height: HERO_HEIGHT,
   },
   {
     src: "/images/derry-lane-rear-lane.jpg",

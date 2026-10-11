@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { HERO_ALT, HERO_IMAGE } from "@/lib/content";
+import { HERO_ALT, HERO_HEIGHT, HERO_IMAGE, HERO_WIDTH } from "@/lib/content";
 
 export function pageMetadata({
   title,
@@ -19,7 +19,7 @@ export function pageMetadata({
       description,
       url: path,
       type: "website",
-      images: [{ url: HERO_IMAGE, width: 1600, height: 900, alt: HERO_ALT }],
+      images: [{ url: HERO_IMAGE, width: HERO_WIDTH, height: HERO_HEIGHT, alt: HERO_ALT }],
     },
     twitter: {
       card: "summary_large_image",

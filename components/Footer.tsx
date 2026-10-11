@@ -1,15 +1,21 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Disclaimer } from "@/components/Disclaimer";
 import { LastUpdated } from "@/components/LastUpdated";
-import { NAV_LINKS, SPEC_DISCLAIMER } from "@/lib/content";
+import { LOGO_HEIGHT, LOGO_IMAGE, LOGO_WIDTH, NAV_LINKS, SPEC_DISCLAIMER } from "@/lib/content";
 
 export function Footer() {
   return (
     <footer className="bg-brand-deep text-text-on-dark">
       <div className="page-wrap grid gap-8 py-12 md:grid-cols-[1.4fr_1fr]">
         <div>
-          <p className="font-display text-2xl text-white">Derry Lane Towns</p>
-          <span className="mt-2 block h-px w-12 bg-brand-accent" aria-hidden="true" />
+          <Image
+            src={LOGO_IMAGE}
+            alt="Derry Lane Towns"
+            width={LOGO_WIDTH}
+            height={LOGO_HEIGHT}
+            className="h-16 w-auto"
+          />
           <div className="mt-5">
             <Disclaimer />
           </div>
